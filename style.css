@@ -1,0 +1,10 @@
+#form-dialog {
+    margin: auto;
+    position: fixed;
+    width: 500px;
+    border-radius: 1em;
+
+    &::backdrop {
+        background: rgba(0, 0, 0, 0.5);
+    }
+}

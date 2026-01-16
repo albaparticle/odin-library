@@ -51,8 +51,8 @@ function render() {
                     <h5 class="card-title">${book.title}</h5>
                     <p class="card-text"><strong>Author:</strong> ${book.author}</p>
                     <p class="card-text"><strong>Pages:</strong> ${book.pages}</p>
-                    <p class="card-text"><span class="badge ${book.read ? 'bg-success' : 'bg-warning'}">${book.read ? 'Read' : 'Unread'}</span>
-                        <button class="btn btn-outline-dark btn-sm" onclick="updateStatus(${index})">Edit</button>
+                    <p class="card-text">
+                        <button class="btn btn-outline-dark btn-sm badge ${book.read ? 'bg-success' : 'bg-warning'}" onclick="updateStatus(${index})"><i class="bi bi-pencil"></i> ${book.read ? 'Read' : 'Unread'}</button>
                     </p>
                     <button class="btn btn-danger" onclick="removeBook(${index})">Remove</button>
                 </div>
