@@ -52,9 +52,9 @@ function render() {
                     <p class="card-text"><strong>Author:</strong> ${book.author}</p>
                     <p class="card-text"><strong>Pages:</strong> ${book.pages}</p>
                     <p class="card-text">
-                        <button class="btn btn-outline-dark btn-sm badge ${book.read ? 'bg-success' : 'bg-warning'}" onclick="updateStatus(${index})"><i class="bi bi-pencil"></i> ${book.read ? 'Read' : 'Unread'}</button>
+                        <button class="btn btn-outline-dark btn-sm badge ${book.read ? 'bg-success' : 'bg-warning'}" onclick="updateStatus(${index})">${book.read ? `<i class="bi bi-book"></i> Read` : `<i class="bi bi-journal"></i> Unread`}</button>
                     </p>
-                    <button class="btn btn-danger" onclick="removeBook(${index})">Remove</button>
+                    <button class="btn btn-danger" onclick="removeBook(${index})"><i class="bi bi-trash3"></i> Remove</button>
                 </div>
             </div>
         </div>

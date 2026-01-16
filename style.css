@@ -1,10 +1,46 @@
+:root {
+    --transition-speed: 0.3s;
+}
+
 #form-dialog {
     margin: auto;
     position: fixed;
     width: 500px;
     border-radius: 1em;
+    opacity: 0;
+    transform: scale(0.9);
+    display: none;
+    transition:
+        opacity var(--transition-speed) ease,
+        transform var(--transition-speed) ease,
+        display var(--transition-speed) allow-discrete,
+        overlay var(--transition-speed) allow-discrete;
 
     &::backdrop {
-        background: rgba(0, 0, 0, 0.5);
+        transition: 
+            background-color var(--transition-speed),
+            display var(--transition-speed) allow-discrete,
+            overlay var(--transition-speed) allow-discrete;
+    }
+}
+
+#form-dialog[open] {
+    opacity: 1;
+    transform: scale(1);
+    display: block;
+
+    &::backdrop {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+@starting-style {
+    #form-dialog[open] {
+        opacity: 0;
+        transform: scale(0.9);
+
+        &::backdrop {
+            background-color: rgba(0, 0, 0, 0);
+        }
     }
 }
